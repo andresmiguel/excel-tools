@@ -10,6 +10,10 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
+
+  <scm>
+    <developerConnection>scm:git:https://github.com/andresmiguel/excel-tools.git</developerConnection>
+  </scm>
   
   <dependencies>
 	<!-- Read Excel -->
