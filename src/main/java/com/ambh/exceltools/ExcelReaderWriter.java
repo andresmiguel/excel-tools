@@ -61,7 +61,7 @@ public class ExcelReaderWriter {
 	}
 
 	public void process(String sheetName, Function<String[], RowInfoToWrite> processor)
-			throws EncryptedDocumentException, InvalidFormatException, FileNotFoundException, IOException {
+			throws EncryptedDocumentException, IOException {
 		
 		Workbook wb = WorkbookFactory.create(new FileInputStream(file));
 		Sheet sheet = wb.getSheet(sheetName);
@@ -69,8 +69,7 @@ public class ExcelReaderWriter {
 		process(wb, sheet, processor);
 	}
 
-	public void process(Function<String[], RowInfoToWrite> processor)
-			throws EncryptedDocumentException, InvalidFormatException, FileNotFoundException, IOException {
+	public void process(Function<String[], RowInfoToWrite> processor) throws EncryptedDocumentException, IOException {
 		
 		Workbook wb = WorkbookFactory.create(new FileInputStream(file));
 		Sheet sheet = wb.getSheetAt(0);
@@ -86,7 +85,7 @@ public class ExcelReaderWriter {
 		this.file = file;
 	}
 
-	static class RowInfoToWrite {
+	public static class RowInfoToWrite {
 		int firstColumn;
 		String[] data;
 
